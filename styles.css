@@ -1,0 +1,447 @@
+/* -------------------- CSS Variables -------------------- */
+:root {
+    --primary-color: #FFFFFF; /* White */
+    --secondary-color: #2A1F1A; /* Dark Brown */
+    --button-color: #AF9685; /* Beige */
+    --background-color: #f5f5f5; /* Light Gray */
+    --text-color: #2A1F1A; /* Dark Brown for content text */
+    --header-bg: var(--secondary-color); /* Header Background */
+    --footer-bg: var(--secondary-color); /* Footer Background */
+    --border-color: var(--button-color); /* Border Color */
+}
+
+/* -------------------- Base Styles -------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; /* Removed default margin for full-width layout */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6; /* Increased for better readability */
+    color: var(--text-color); /* Dark text for content areas */
+    background-color: var(--background-color); /* Light background for contrast */
+}
+
+img {
+    max-width: 100%;
+    display: block; /* Corrected from flexbox to block */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-weight: bold; /* Changed from 'font: bold;' to 'font-weight: bold;' */
+}
+
+/* -------------------- Header -------------------- */
+.header {
+    position: fixed;
+    top: 0; /* Fixed to top */
+    width: 100%;
+    background-color: var(--header-bg); /* Dark brown background */
+    padding: 10px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid var(--border-color); /* Beige border */
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between nav, logo, and button */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__logo img {
+    order: 1; /* Positions logo at the end */
+    height: 45px;
+}
+
+.header__shop-button {
+    order: 4; /* Positions "Shop Now" button next to logo */
+    padding: 10px 20px;
+    background-color: var(--button-color); /* Beige background */
+    color: var(--primary-color); /* White text */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 15px; /* Space between nav and button */
+}
+
+.header__shop-button:hover {
+    background-color: #97785A; /* Darkened beige */
+    transform: translateY(-2px);
+}
+
+.header__nav-list {
+    display: flex;
+    list-style: none;
+    order: 2; /* Centers navigation links */
+}
+
+.header__nav-item {
+    margin: 0 15px;
+}
+
+.header__nav-link {
+    color: var(--primary-color); /* White text */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.header__nav-link:hover {
+    color: var(--button-color); /* Beige on hover */
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+    position: relative;
+    margin-top: 70px; /* Adjust if header height changes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Single Banner Image */
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    border: 5px solid var(--button-color); /* Beige border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.banner__image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.banner__overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color); /* White text */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.banner__title {
+    font-size: 3rem; /* Large font size */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner__shop-button {
+    padding: 15px 30px;
+    background-color: var(--button-color); /* Beige background */
+    color: var(--primary-color); /* White text */
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.banner__shop-button:hover {
+    background-color: #97785A; /* Darkened beige */
+    transform: translateY(-2px);
+}
+
+/* -------------------- Products Section -------------------- */
+
+.products {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--text-color); /* Dark brown text */
+}
+
+.products__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.product {
+    position: relative; /* To position the share icon absolutely */
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures button stays at bottom */
+    height: 100%; /* Ensures the product card takes full available height */
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    background-color: var(--primary-color); /* White background */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.product:hover {
+    background-color: #f9f9f9;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product__image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Maintains a square aspect ratio */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the entire area without distortion */
+    transition: opacity 0.3s;
+}
+
+.product__image.secondary {
+    opacity: 0;
+}
+
+.product:hover .product__image.primary {
+    opacity: 0;
+}
+
+.product:hover .product__image.secondary {
+    opacity: 1;
+}
+
+.product__name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-color); /* Dark brown text */
+}
+
+.product__price {
+    color: var(--button-color); /* Beige price */
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.product__add-button {
+    margin-top: auto; /* Ensures the button stays at the bottom */
+    padding: 10px 10px;
+    background-color: var(--button-color); /* Beige background */
+    color: var(--primary-color); /* White text */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.product__add-button:hover {
+    background-color: #97785A; /* Darkened beige */
+    transform: scale(1.05);
+}
+
+
+
+/* Share Icon Styling */
+.product__share-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url('/assest/logos/Share.png'); /* Replace with your share icon path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.product__share-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* -------------------- Footer -------------------- */
+.footer {
+    background-color: var(--footer-bg); /* Dark brown background */
+    color: var(--primary-color); /* White text */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer__social {
+    margin-bottom: 20px;
+}
+
+.footer__social-link {
+    margin: 0 10px;
+    display: inline-block;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.footer__social-link img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer__social-link:hover {
+    opacity: 0.7;
+    transform: scale(1.1); /* Added scale effect on hover */
+}
+
+.footer__newsletter {
+    margin-bottom: 20px;
+}
+
+.footer__form {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    flex-wrap: wrap;
+    background-color: var(--primary-color); /* White background */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+.footer__input {
+    padding: 10px 15px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-right: none; /* Removes right border to merge with button */
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.footer__input::placeholder {
+    color: #999; /* Lightens the placeholder text for better readability */
+}
+
+.footer__input:focus {
+    border-color: var(--button-color); /* Changes border color on focus for better visibility */
+}
+
+.footer__subscribe-button {
+    background-color: var(--button-color); /* Beige background */
+    color: var(--primary-color); /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+.footer__subscribe-button:hover{
+    background-color: #97785A; /* Darkened beige */
+    transform: translateY(-2px);
+}
+
+.footer__copy {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* -------------------- Notification Styles -------------------- */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745; /* Green background for success */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- Responsive Styles -------------------- */
+@media (min-width: 600px) {
+    .products__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__form {
+        flex-wrap: nowrap;
+    }
+
+    .additional-slider .slide {
+        height: 300px; /* Increased height for larger screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .products__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .header__nav-list {
+        margin-left: auto;
+    }
+
+    /* Adjust Hero Content for Larger Screens */
+    .banner__title {
+        font-size: 3.5rem;
+    }
+
+    .banner__shop-button {
+        padding: 15px 40px;
+        font-size: 1.25rem;
+    }
+
+    .additional-slider .slide {
+        height: 400px; /* Further increased height */
+    }
+}
+
+/* -------------------- Accessibility Enhancements -------------------- */
+a:focus,
+button:focus,
+.footer__input:focus {
+    outline: 2px solid var(--button-color);
+    outline-offset: 2px;
+}
+
+/* -------------------- Helper Classes -------------------- */
+/* Since CSS doesn't support functions like darken(), manually specify darker shades */
+
+.header__shop-button:hover,
+.banner__shop-button:hover,
+.product__add-button:hover,
+.footer__subscribe-button:hover {
+    background-color: #97785A; /* Darkened version of #AF9685 */
+}
