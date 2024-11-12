@@ -1,0 +1,60 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="mainstyles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/Frontend/index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="/Frontend/userProfile.html" class="header__nav-link">Profile</a></li>
+                <li class="header__nav-item"><a href="/Frontend/cart.html" class="header__nav-link">Cart</a></li>
+                <!-- <li class="header__nav-item"><a href="#" class="header__nav-link" id="contact-link">Contact</a></li> -->
+            </ul>
+            <div class="header__logo">
+                <a href="#"><img src="/assest/logos/DS Logo.png" alt="Brand Logo"></a>
+            </div>
+            <a href="#" class="header__shop-button btn btn-primary" id="shop-now-btn">Shop Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your Cart</h1>
+        <div id="cart-container">
+            <!-- Cart items will be populated here -->
+        </div>
+        <button id="checkout-button">Proceed to Checkout</button>
+    </main>
+
+    <footer class="footer" id="footer-section">
+        <div class="footer__social">
+            Connect with Us
+            <br>
+            <br>
+            
+            <a href="https://www.facebook.com/" class="footer__social-link" aria-label="Facebook"><img src="/assest/Footer-image/facebook.png" alt="Facebook"></a>
+            <a href="https://x.com/" class="footer__social-link" aria-label="Twitter"><img src="/assest/Footer-image/twitter.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/" class="footer__social-link" aria-label="Instagram"><img src="/assest/Footer-image/instagram.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/" class="footer__social-link" aria-label="Instagram"><img src="/assest/Footer-image/youtube.png" alt="youtube"></a>
+        </div>
+        <div class="footer__newsletter">
+            <form class="footer__form" action="#" method="POST">
+                <input type="email" class="footer__input" placeholder="Enter your email" aria-label="Email Address" required>
+                <button type="submit" class="footer__subscribe-button btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+        <div class="footer__copy">
+            &copy; 2024 Fictional Fashion Brand. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>
